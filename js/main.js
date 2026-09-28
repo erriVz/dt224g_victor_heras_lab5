@@ -59,8 +59,13 @@ function validateForm() {
  */
 function displayErrors() {
     // Rensa tidigare felmeddelanden
+    errorList.innerHTML = "";
 
     // Skriv ut aktuella felmeddelanden till DOM
+    for (let i; i<errors.length; i++){
+        let errormed = document.querySelector("errorlist");
+        errormed.innerHTML =+ "<li>errors(i)<li>"
+    }
 }
 
 
