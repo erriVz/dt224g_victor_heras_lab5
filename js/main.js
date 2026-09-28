@@ -34,10 +34,23 @@ let history = [];
  */
 function validateForm() {
     // Kontrollera formulärets obligatoriska fält
+    errors=[];
+
+    if (fullnameInput.value.trim === ""){
+        errors.push("Du måste fylla i namn");
+    }
+    if (emailInput.value.trim === ""){
+        errors.push("Du måste fylla i email");
+    }
+    if (phoneInput.value.trim === ""){
+        errors.push("Du måste fylla i telefonnummer");
+    }
 
     // Visa eventuella felmeddelanden
+    displayErrors();
 
     // Returnera resultatet (true eller false) av valideringen
+    return errors.length === 0;
 }
 
 
