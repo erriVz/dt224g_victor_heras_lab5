@@ -62,9 +62,9 @@ function displayErrors() {
     errorList.innerHTML = "";
 
     // Skriv ut aktuella felmeddelanden till DOM
-    for (let i; i<errors.length; i++){
-        let errormed = document.querySelector("errorlist");
-        errormed.innerHTML =+ "<li>errors(i)<li>"
+    for (let i = 0; i<errors.length; i++){
+        let errormed = document.querySelector("#errorlist");
+        errormed.innerHTML += "<li>" + errors[i] + "<li>"
     }
 }
 
