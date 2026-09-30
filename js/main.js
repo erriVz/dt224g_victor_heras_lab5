@@ -137,6 +137,17 @@ function deleteHistory() {
 // - validera inmatningen
 // - skapa studentkort om valideringen lyckas
 
+form.addEventListener("submit", function(event){
+    event.preventDefault();
+
+    if (validateForm()) {
+        createStudentCard();
+        console.log("Hej");
+        
+        
+    }
+
+});
 
 // När användaren klickar på "Rensa"
 
