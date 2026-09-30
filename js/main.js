@@ -73,10 +73,21 @@ function displayErrors() {
  */
 function createStudentCard() {
     // Hämta information från formuläret
+    const studentkort = {
+        namn: fullnameInput.value,
+        email: emailInput.value,
+        telefon: phoneInput.value,
+        font: fontSelect.value,
+    };
 
     // Uppdatera studentkortet
+    previewFullname.textContent = studentkort.namn;
+    previewEmail.textContent = studentkort.email;
+    previewPhone.textContent = studentkort.telefon;
+
 
     // Lägg till studentkortet i historiken
+    history.push(studentkort);
 
     // Spara och uppdatera historiken
     saveHistory();
