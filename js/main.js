@@ -36,13 +36,13 @@ function validateForm() {
     // Kontrollera formulärets obligatoriska fält
     errors=[];
 
-    if (fullnameInput.value.trim === ""){
+    if (fullnameInput.value.trim() === ""){
         errors.push("Du måste fylla i namn");
     }
-    if (emailInput.value.trim === ""){
+    if (emailInput.value.trim() === ""){
         errors.push("Du måste fylla i email");
     }
-    if (phoneInput.value.trim === ""){
+    if (phoneInput.value.trim() === ""){
         errors.push("Du måste fylla i telefonnummer");
     }
 
@@ -63,8 +63,7 @@ function displayErrors() {
 
     // Skriv ut aktuella felmeddelanden till DOM
     for (let i = 0; i<errors.length; i++){
-        let errormed = document.querySelector("#errorlist");
-        errormed.innerHTML += "<li>" + errors[i] + "<li>"
+        errorList.innerHTML += "<li>" + errors[i] + "</li>"
     }
 }
 
@@ -80,6 +79,8 @@ function createStudentCard() {
     // Lägg till studentkortet i historiken
 
     // Spara och uppdatera historiken
+    saveHistory();
+    renderHistory();
 }
 
 
@@ -140,10 +141,10 @@ function deleteHistory() {
 form.addEventListener("submit", function(event){
     event.preventDefault();
 
+    console.log(errors);
+
     if (validateForm()) {
         createStudentCard();
-        console.log("Hej");
-        
         
     }
 
