@@ -169,7 +169,7 @@ function deleteHistory() {
 form.addEventListener("submit", function(event){
     event.preventDefault();
 
-    if (validateForm()) {
+    if (validateForm()) { //kallar validateForm och beroende om den ger True eller false kallas sedan function createStudentCard
         createStudentCard();
         
     }
@@ -177,10 +177,10 @@ form.addEventListener("submit", function(event){
 });
 
 // När användaren klickar på "Rensa"
-clearButton.addEventListener("click", clearForm);
+clearButton.addEventListener("click", clearForm); //När rensa knappen i webbläsaren klickas kallas clearForm function
 
 // När användaren klickar på "Radera historik"
-deleteHistoryButton.addEventListener("click", deleteHistory);
+deleteHistoryButton.addEventListener("click", deleteHistory); //När rensa historik knappen i webbläsaren klickas kallas deleteHistory function
 
 
 // När sidan laddas:
