@@ -148,9 +148,12 @@ function clearForm() {
  */
 function deleteHistory() {
     // Radera sparad historik
-    historySection.innerHTML = "";
+    localStorage.removeItem("history");
 
     // Uppdatera history och visningen på sidan
+    history = [];
+    renderHistory();
+
 }
 
 
