@@ -140,6 +140,8 @@ function clearForm() {
     previewPhone.textContent = "Telefon";
 
     // Rensa eventuella felmeddelanden
+    errors = [];
+    displayErrors();
 }
 
 
