@@ -100,6 +100,7 @@ function createStudentCard() {
  */
 function saveHistory() {
     // Spara history i localStorage
+    localStorage.setItem("history", JSON.stringify(history));
 }
 
 
@@ -172,3 +173,7 @@ clearButton.addEventListener("click", clearForm);
 
 // När sidan laddas:
 // - läs in och visa eventuell tidigare historik
+window.addEventListener("load", function(){
+    loadHistory();
+    renderHistory();
+})
