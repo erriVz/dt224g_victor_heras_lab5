@@ -109,8 +109,12 @@ function saveHistory() {
  */
 function loadHistory() {
     // Hämta eventuell sparad historik
+    const saveHistory = localStorage.getItem("history");
 
     // Uppdatera history
+    if (saveHistory) {
+        history = JSON.parse(saveHistory);
+    }
 }
 
 
