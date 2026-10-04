@@ -125,7 +125,7 @@ function renderHistory() {
     historySection.innerHTML = "";
 
     // Skriv ut innehållet i history till DOM
-    for (let i=0; i<history.length; i++) {
+    for (let i=history.length-1; i>=0; i--) {
         const studentkort = history[i];
 
         historySection.innerHTML +=
