@@ -34,7 +34,6 @@ let history = [];
  */
 function validateForm() {
     // Kontrollera formulärets obligatoriska fält
-    errors=[];
 
     if (fullnameInput.value.trim() === ""){
         errors.push("Du måste fylla i namn");
@@ -126,6 +125,18 @@ function renderHistory() {
     historySection.innerHTML = "";
 
     // Skriv ut innehållet i history till DOM
+    for (let i=0; i<history.length; i++) {
+        const studentkort = history[i];
+
+        historySection.innerHTML +=
+        "<div class='card'>" +
+        "<div class='card-divider'></div>" +
+        "<div class='card-info'>" + studentkort.namn + "</div>" +
+        "<div class='card-info'>" + studentkort.email + "</div>" +
+        "<div class='card-info'>" + studentkort.telefon + "</div>" +
+        "</div>";
+    }
+
 }
 
 
@@ -142,7 +153,7 @@ function clearForm() {
 
     // Rensa eventuella felmeddelanden
     errors = [];
-    displayErrors();
+    errorList.innerHTML = "";
 }
 
 
@@ -155,7 +166,7 @@ function deleteHistory() {
 
     // Uppdatera history och visningen på sidan
     history = [];
-    renderHistory();
+    historySection.innerHTML = "";
 
 }
 
