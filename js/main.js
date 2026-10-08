@@ -135,9 +135,9 @@ function renderHistory() {
         historySection.innerHTML +=
         "<div class='card'>" +
         "<div class='card-divider'></div>" +
-        "<div class='card-info'>" + studentkort.namn + "</div>" +
-        "<div class='card-info'>" + studentkort.email + "</div>" +
-        "<div class='card-info'>" + studentkort.telefon + "</div>" +
+        "<div class='card-info' style='font-family:" + studentkort.font + "'>" + studentkort.namn + "</div>" +
+        "<div class='card-info' style='font-family:" + studentkort.font + "'>" + studentkort.email + "</div>" +
+        "<div class='card-info' style='font-family:" + studentkort.font + "'>" + studentkort.telefon + "</div>" +
         "</div>";
     }
 
