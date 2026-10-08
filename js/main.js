@@ -84,6 +84,10 @@ function createStudentCard() {
     previewEmail.textContent = studentkort.email;
     previewPhone.textContent = studentkort.telefon;
 
+    // Ändrar font på namn, email & telefon
+    previewFullname.style.fontFamily = studentkort.font;
+    previewEmail.style.fontFamily = studentkort.font;
+    previewPhone.style.fontFamily = studentkort.font;
 
     // Lägg till studentkortet i historiken
     history.push(studentkort);
