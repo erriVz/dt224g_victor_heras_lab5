@@ -112,11 +112,11 @@ function saveHistory() {
  */
 function loadHistory() {
     // Hämta eventuell sparad historik
-    const saveHistory = localStorage.getItem("history");
+    const savedHistory = localStorage.getItem("history");
 
     // Uppdatera history
-    if (saveHistory) {
-        history = JSON.parse(saveHistory);
+    if (savedHistory) {
+        history = JSON.parse(savedHistory);
     }
 }
 
@@ -130,14 +130,14 @@ function renderHistory() {
 
     // Skriv ut innehållet i history till DOM
     for (let i=history.length-1; i>=0; i--) {
-        const studentkort = history[i];
+        const studentkortHistory = history[i];
 
         historySection.innerHTML +=
         "<div class='card'>" +
         "<div class='card-divider'></div>" +
-        "<div class='card-info' style='font-family:" + studentkort.font + "'>" + studentkort.namn + "</div>" +
-        "<div class='card-info' style='font-family:" + studentkort.font + "'>" + studentkort.email + "</div>" +
-        "<div class='card-info' style='font-family:" + studentkort.font + "'>" + studentkort.telefon + "</div>" +
+        "<div class='card-info' style='font-family:" + studentkortHistory.font + "'>" + studentkortHistory.namn + "</div>" +
+        "<div class='card-info' style='font-family:" + studentkortHistory.font + "'>" + studentkortHistory.email + "</div>" +
+        "<div class='card-info' style='font-family:" + studentkortHistory.font + "'>" + studentkortHistory.telefon + "</div>" +
         "</div>";
     }
 
